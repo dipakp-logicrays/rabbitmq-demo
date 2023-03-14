@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Communication/etc/communication.xsd">
+    <topic name="logicrays.product.delete" request="Magento\Catalog\Api\Data\ProductInterface"/>
+    <topic name="logicrays.magento.product.save" request="string"/>
+</config>

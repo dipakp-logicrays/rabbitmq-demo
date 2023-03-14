@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/topology.xsd">
+    <exchange name="logicrays.product" type="topic" connection="amqp">
+        <binding id="LogicraysProductDelete" 
+            topic="logicrays.product.delete"
+            destinationType="queue"
+            destination="logicrays_product_delete"/>
+    </exchange>
+    <!-- Product save -->
+    <!-- name : A unique ID for the exchange  -->
+    <!-- type : Specifies the type of exchange. Must be topic -->
+    <!-- connection: For AMQP connections, a string that identifies the connection. For MySQL connections, the connection name must be db -->
+    <exchange name="logicrays.magento.product.save" type="topic" connection="amqp">
+        <!-- id: A unique ID for this binding -->
+        <!-- topic: The name of a topic -->
+        <!-- destinationType: Must be queue -->
+        <!-- destination: Identifies the name of a queue -->
+        <binding id="logicrays_product_save" 
+            topic="logicrays.magento.product.save"
+            destinationType="queue"
+            destination="logicrays_product_save"/>
+    </exchange>
+</config>
