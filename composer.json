@@ -1,5 +1,5 @@
 {
-    "name": "lr/module-rabbitmq-example",
+    "name": "logicrays/module-rabbitmq-example",
     "description": "RabbitMq module for Magento 2 extension.",
     "type": "magento2-module",
     "version": "1.0.0",
