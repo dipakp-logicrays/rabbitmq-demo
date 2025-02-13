@@ -3,6 +3,7 @@
 namespace Logicrays\RabbitMQ\Observer\Product;
 
 use Logicrays\RabbitMQ\Model\MessageQueues\Product\Publisher as Publisher;
+use Logicrays\RabbitMQ\Model\MessageQueues\Product\ProductSavePublisher as ProductSavePublisher;
 
 class SaveAfter implements \Magento\Framework\Event\ObserverInterface
 {
@@ -12,14 +13,22 @@ class SaveAfter implements \Magento\Framework\Event\ObserverInterface
     private $_publisher;
 
     /**
+     * @var ProductSavePublisher
+     */
+    private $productSavePublisher;
+
+    /**
      * __construct function
      *
      * @param Publisher $publisher
+     * @param ProductSavePublisher $productSavePublisher
      */
     public function __construct(
-        Publisher $publisher
+        Publisher $publisher,
+        ProductSavePublisher $productSavePublisher
     ) {
         $this->_publisher = $publisher;
+        $this->productSavePublisher = $productSavePublisher;
     }
 
     /**
@@ -32,14 +41,18 @@ class SaveAfter implements \Magento\Framework\Event\ObserverInterface
         \Magento\Framework\Event\Observer $observer
     ) {
         $_product = $observer->getProduct();
-        
+
         $_data=[
+            'id' => $_product->getId(),
             'sku' => $_product->getSku(),
-            'comment' => 'saved'
+            'name' => $_product->getName(),
+            'comment' => 'Product Saved!!'
         ];
 
         $this->_publisher->execute(
             json_encode($_data)
         );
+
+        $this->productSavePublisher->execute(json_encode($_data));
     }
 }

@@ -8,4 +8,7 @@
     <publisher topic="logicrays.magento.product.save">
         <connection name="amqp" exchange="logicrays.magento.product.save" />
     </publisher>
+    <publisher topic="syncLrProductTopic">
+        <connection name="amqp" exchange="syncLrProductExchange" />
+    </publisher>
 </config>

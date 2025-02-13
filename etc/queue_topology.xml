@@ -22,4 +22,11 @@
             destinationType="queue"
             destination="logicrays_product_save"/>
     </exchange>
+    <!-- Product save -->
+    <exchange name="syncLrProductExchange" type="topic" connection="amqp">
+        <binding id="syncLrProductBinding" 
+            topic="syncLrProductTopic"
+            destinationType="queue"
+            destination="syncLrProductQueue"/>
+    </exchange>
 </config>

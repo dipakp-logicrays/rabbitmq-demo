@@ -15,4 +15,9 @@
         connection="amqp"
         handler="Logicrays\RabbitMQ\Model\MessageQueues\Product\Consumer::processMessage"/>
 
+    <consumer name="syncLrProductConsumer"
+        queue="syncLrProductQueue"
+        connection="amqp"
+        maxMessages="0"
+        handler="Logicrays\RabbitMQ\Model\MessageQueues\Product\Consumer::process"/>
 </config>

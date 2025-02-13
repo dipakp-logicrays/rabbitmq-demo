@@ -51,4 +51,16 @@ class Consumer
     {
         $this->logger->info($_data);
     }
+
+    /**
+     * _processMessage
+     *
+     * @param string $_data
+     * @throws \Magento\Framework\Exception\LocalizedException
+     * @return void
+     */
+    public function process(string $_data)
+    {
+        $this->logger->info('syncLrProductConsumer:'.$_data);
+    }
 }
