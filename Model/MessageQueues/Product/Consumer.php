@@ -33,8 +33,8 @@ class Consumer
     ) {
         $this->directoryList = $directoryList;
         $logDir = $directoryList->getPath('log');
-        $writer = new \Zend\Log\Writer\Stream($logDir . DIRECTORY_SEPARATOR . $this->logFileName);
-        $logger = new \Zend\Log\Logger();
+        $writer = new \Zend_Log_Writer_Stream($logDir . DIRECTORY_SEPARATOR . $this->logFileName);
+        $logger = new \Zend_Log();
         $logger->addWriter($writer);
         $this->logger = $logger;
     }
