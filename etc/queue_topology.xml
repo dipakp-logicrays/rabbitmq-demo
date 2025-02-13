@@ -29,4 +29,11 @@
             destinationType="queue"
             destination="syncLrProductQueue"/>
     </exchange>
+
+    <exchange name="magento" type="topic" connection="amqp">
+        <binding id="orderDetailsBinding" 
+                topic="logicrays.order.details.topic" 
+                destinationType="queue" 
+                destination="logicrays_order_details_queue"/>
+    </exchange>
 </config>

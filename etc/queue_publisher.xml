@@ -11,4 +11,7 @@
     <publisher topic="syncLrProductTopic">
         <connection name="amqp" exchange="syncLrProductExchange" />
     </publisher>
+    <publisher topic="logicrays.order.details.topic">
+        <connection name="amqp" exchange="magento" />
+    </publisher>
 </config>

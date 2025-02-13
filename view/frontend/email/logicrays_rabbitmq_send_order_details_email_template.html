@@ -1,0 +1,32 @@
+<!--@subject {{trans "New Order Recieved #%order_number" order_number=$increment_id}} @-->
+<!--@vars {
+"var message_1":"Custom Message 1",
+"var message_2":"Custom Message 2"
+} @-->
+
+{{template config_path="design/email/header_template"}}
+
+<table>
+    <tr class="details">
+        <td>Hi There!!!</td>
+    </tr>
+    <tr class="details">
+        <td>New Order Recieved.</td>
+    </tr>
+    <tr class="email-intro">
+        <td>
+            <pre>
+                <code>
+                    {{var order_data}}
+                </code>
+            </pre>
+        </td>
+    </tr>
+    <tr class="details">
+        <td>
+            <p>Thank you</p>
+        </td>
+    </tr>
+</table>
+
+{{template config_path="design/email/footer_template"}}

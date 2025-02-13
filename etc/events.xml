@@ -4,4 +4,8 @@
         <observer instance="Logicrays\RabbitMQ\Observer\Product\SaveAfter"
             name="logicrays_rabbitmq_observer_product_saveafter" />
     </event>
+    <event name="sales_order_place_after">
+        <observer name="logicrays_rabbitmq_order_place"
+                instance="Logicrays\RabbitMQ\Observer\SalesOrderPlaceAfterObserver"/>
+    </event>
 </config>
