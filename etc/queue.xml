@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/queue.xsd">
+    <broker topic="logicrays.order.details.topic" type="amqp" exchange="magento">
+        <queue consumer="orderDetailsConsumer"
+                name="logicrays_order_details_queue"
+                handler="Logicrays\RabbitMQ\Model\Order\Queue\Consumer::processMessage"/>
+    </broker>
+</config>

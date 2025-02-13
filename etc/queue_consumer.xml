@@ -20,4 +20,8 @@
         connection="amqp"
         maxMessages="0"
         handler="Logicrays\RabbitMQ\Model\MessageQueues\Product\Consumer::process"/>
+
+    <consumer name="orderDetailsConsumer"
+        queue="logicrays_order_details_queue"
+        handler="Logicrays\RabbitMQ\Model\Order\Queue\Consumer::processMessage"/>
 </config>

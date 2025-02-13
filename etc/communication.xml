@@ -4,4 +4,8 @@
     <topic name="logicrays.product.delete" request="Magento\Catalog\Api\Data\ProductInterface"/>
     <topic name="logicrays.magento.product.save" request="string"/>
     <topic name="syncLrProductTopic" request="string"/>
+
+    <topic name="logicrays.order.details.topic" request="string">
+        <handler name="orderDetailsHandler" type="Logicrays\RabbitMQ\Model\Order\Queue\Consumer" method="processMessage"/>
+    </topic>
 </config>
